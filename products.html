@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Swift Drive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/ecd29c6684.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="#" class="logo" id="logo-link">SWIFT DRIVE</a>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li><a href="#additional-services">Services</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+            <div class="navbar-icons">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <div id="cart-dropdown" class="cart-dropdown">
+                    <ul id="cart-items"></ul>
+                    <button id="checkout-button">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-video-container">
+            <video autoplay muted loop id="navbar-video">
+                <source src="your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+    </header>
+    <main id="products">
+        <div class="product-card">
+            <img src="/assets/corolla2.png" alt="Toyota Corolla">
+            <h2>Toyota Corolla</h2>
+            <p>Economic Sedan</p>
+            <p>$5000/day</p>
+            <button class="add-to-cart" data-product-id="1" data-product-name="Toyota Corolla" data-product-price="5000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/civic.jpg" alt="Honda Civic">
+            <h2>Honda Civic</h2>
+            <p>Economic Sedan</p>
+            <p>$7000/day</p>
+            <button class="add-to-cart" data-product-id="2" data-product-name="Honda Civic" data-product-price="7000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/city.jpg" alt="Honda City">
+            <h2>Honda City</h2>
+            <p>Economic Sedan</p>
+            <p>$6500/day</p>
+            <button class="add-to-cart" data-product-id="3" data-product-name="Honda City" data-product-price="6500">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/camry.jpg" alt="Toyota Camry">
+            <h2>Toyota Camry</h2>
+            <p>Economic Sedan</p>
+            <p>$9000/day</p>
+            <button class="add-to-cart" data-product-id="4" data-product-name="Toyota Camry" data-product-price="9000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/c300.jpg" alt="Mercedes-Benz C-Class">
+            <h2>Mercedes-Benz C300</h2>
+            <p>Luxury Sedan</p>
+            <p>$10000/day</p>
+            <button class="add-to-cart" data-product-id="5" data-product-name="Mercedes-Benz C300" data-product-price="10000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/A5.jpg" alt="Audi S5">
+            <h2>Audi A5 convertible</h2>
+            <p>Luxury Sedan</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="6" data-product-name="Audi A5 convertible" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/CRV.jpg" alt="Honda CRV">
+            <h2>Honda CRV</h2>
+            <p>Family SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="7" data-product-name="Honda CRV" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/X7.jpg" alt="BMW X7">
+            <h2>BMW X7</h2>
+            <p>Luxury Family SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="8" data-product-name="BMW X7" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/X1.jpg" alt="BMW X1">
+            <h2>BMW X1</h2>
+            <p>Compact SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="9" data-product-name="BMW X1" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/320.jpg" alt="BMW 320i">
+            <h2>BMW 320i</h2>
+            <p>Sport Sedan</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="10" data-product-name="BMW 320i" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/C63.jpg" alt="C63">
+            <h2>Mercedes-Benz C63s</h2>
+            <p>Performance Sedan</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="11" data-product-name="Mercedes-Benz C63s" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/hilux.jpg" alt="Toyota Hilux">
+            <h2>Toyota Hilux</h2>
+            <p>Pickup Truck</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="12" data-product-name="Toyota Hilux" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/golf.jpg" alt="Golf R">
+            <h2>Volkswagen Golf R</h2>
+            <p>Sport Hatchback</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="13" data-product-name="Volkswagen Golf R" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/rav4.jpg" alt="RAV 4">
+            <h2>Toyota RAV4</h2>
+            <p>Family SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="14" data-product-name="Toyota RAV4" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/cross.jpg" alt="Toyota Cross">
+            <h2>Toyota Cross</h2>
+            <p>Compact SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="15" data-product-name="Toyota Cross" data-product-price="8000">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="/assets/fortuner1.png" alt="Fortuner">
+            <h2>Toyota Fortuner</h2>
+            <p>Family SUV</p>
+            <p>$8000/day</p>
+            <button class="add-to-cart" data-product-id="16" data-product-name="Toyota Fortuner" data-product-price="8000">Add to Cart</button>
+        </div>
+    </main>
+    <section id="additional-services">
+        <h2>Services</h2>
+        <p>We offer more services to enhance your experience:</p>
+        <div class="services-container">
+            <div class="service-card">
+                <span>Car Servicing</span> - <strong>$12000.00</strong>
+                <button class="add-to-cart" data-product-id="17" data-product-name="Car Servicing" data-product-price="12000.00">Add to Cart</button>
+            </div>
+            <div class="service-card">
+                <span>Car Wash and Vacuum</span> - <strong>$1500.00</strong>
+                <button class="add-to-cart" data-product-id="18" data-product-name="Car Wash and Vacuum" data-product-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="service-card">
+                <span>Pick-up and Drop-off</span> - <strong>$3000.00</strong>
+                <button class="add-to-cart" data-product-id="19" data-product-name="Pick-up and Drop-off" data-product-price="3000.00">Add to Cart</button>
+            </div>
+            <div class="service-card">
+                <span>Full Interior Detail</span> - <strong>$18000.00</strong>
+                <button class="add-to-cart" data-product-id="20" data-product-name="Full Interior Detail" data-product-price="18000.00">Add to Cart</button>
+            </div>
+            <div class="service-card">
+                <span>GPS Navigation Software</span> - <strong>$3000.00</strong>
+                <button class="add-to-cart" data-product-id="21" data-product-name="GPS Navigation Software" data-product-price="3000.00">Add to Cart</button>
+            </div>
+            <div class="service-card">
+                <span>Child Car Seat</span> - <strong>$3000.00</strong>
+                <button class="add-to-cart" data-product-id="22" data-product-name="Child Car Seat" data-product-price="3000.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div style="text-align: center;">
+            <button id="checkout">Checkout</button>
+            <button id="cancel-button">Cancel</button>
+            <button id="exit-button">Exit</button>
+        </div>
+        <div id="about-us">
+            <h2>About Us</h2>
+            <p>
+                Full Name: Kemar Mullings<br>
+                ID#:2306288<br>
+                Email: <a href="mailto:2306288@utech.edu.jm">2306288@utech.edu.jm</a><br>
+                Module Code: CIT 2011<br>
+                Assignment Name: Individual Assessment #2<br>
+                Day/Time of Class: Wednesday @8am<br>
+                <h2>Mission Statement</h2>
+            <p>
+                Our mission is to provide our clients with industry leading service at unbeatable prices.
+            </p>
+            <p>&copy; 2024 Swift Drive. All rights reserved.</p>
+
+            </p>
+        </div>
+        
+    
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Swift Drive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">SWIFT DRIVE</a>
+    </header>
+    <main class="invoice-container">
+        <div class="invoice-header">
+            <h1>Invoice</h1>
+            <p id="invoice-date"></p>
+        </div>
+
+        <!-- Invoice Items Table -->
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-items">
+                <!-- Invoice items will be populated here -->
+            </tbody>
+        </table>
+
+        <!-- Summary Section -->
+        <div class="summary">
+            <p id="subtotal"></p>
+            <p id="tax"></p>
+            <p id="discount"></p>
+            <p id="total"></p>
+        </div>
+
+        <!-- Buttons Section -->
+        <div class="invoice-buttons">
+            <button id="cancel-button">Cancel</button>
+            <button id="exit-button">Exit</button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const invoiceDate = localStorage.getItem('invoiceDate');
+            const invoiceItems = document.getElementById('invoice-items');
+            let subtotal = 0;
+            const taxRate = 0.15; // 15% tax
+            const discountRate = 0.05; // 5% discount
+
+            // Display the invoice date
+            document.getElementById('invoice-date').textContent = `Date: ${invoiceDate}`;
+
+            cart.forEach(item => {
+                const total = item.price * item.qty;
+                subtotal += total;
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.name}</td><td>$${item.price.toFixed(2)}</td><td>${item.qty}</td><td>$${total.toFixed(2)}</td>`;
+                invoiceItems.appendChild(row);
+            });
+
+            const tax = subtotal * taxRate;
+            const discount = subtotal * discountRate;
+            const total = subtotal + tax - discount;
+
+            document.getElementById('subtotal').textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+            document.getElementById('tax').textContent = `Tax (15%): $${tax.toFixed(2)}`;
+            document.getElementById('discount').textContent = `Discount (5%): -$${discount.toFixed(2)}`;
+            document.getElementById('total').textContent = `Total: $${total.toFixed(2)}`;
+
+            document.getElementById('cancel-button').addEventListener('click', () => {
+                localStorage.removeItem('cart');
+                localStorage.removeItem('invoiceDate');
+                window.location.href = 'products.html';
+            });
+
+            document.getElementById('exit-button').addEventListener('click', () => {
+                window.location.href = 'products.html';
+            });
+        });
+    </script>
+</body>
+</html>
